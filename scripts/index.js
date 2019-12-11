@@ -31,14 +31,18 @@ console.log(nameToListItem("breakfast"));
 // array of <li> elements.
 
 
-
 function categoriesToListItem(array) {
     return array.map(nameToListItem);
-    // for (let elementItem of categoryName) {
-    // li.appendChild(elementItem);
 }
-console.log(categoriesToListItem(mealCategories));
 
 // Use `getCategories()`in combination with `categoriesToListItem()`
 
-getCategories(categoriesToListItem());
+console.log(getCategories(menu));
+console.log(categoriesToListItem(mealCategories));
+
+// Render the list items to `.js-menu`
+
+function listItemToElement(element) {
+    nameContainer.appendChild(element);
+}
+listItemToElement(mealCategories);
